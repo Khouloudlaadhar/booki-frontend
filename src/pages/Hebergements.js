@@ -1,13 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAllHebergements } from '../redux/actions/hebergementActionCreators'
 
 
 function Hebergements() {
-    const [hebergements, setHebergements] = useState([])
+
+    const hebergements = useSelector(state => state.hebergements.all)
+    const dispatch = useDispatch()
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/hebergements`)//http://localhost:5000/hebergements//
+        axios.get(`${process.env.REACT_APP_API_URL}/hebergements`)//http://localhost:5000/hebergements
             .then(res => {
-                setHebergements(res.data)
+                dispatch(setAllHebergements(res.data))
             })
             .catch(err => {
                 alert(err.message)
