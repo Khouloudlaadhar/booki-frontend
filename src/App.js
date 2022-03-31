@@ -6,10 +6,13 @@ import Hebergements from "./pages/Hebergements";
 import HebergementDetails from "./pages/HebergementDetails";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import GlobalLoading from "./Components/GlobalLoading";
 
 
 function App() {
   return (
+    <>
+    <GlobalLoading/>
     <Router>
       <Switch>
         <Route exact path='/' component={Home} />
@@ -20,6 +23,7 @@ function App() {
         <Route  component={NotFound} />
       </Switch>
     </Router>
+    </>
 
   );
 }
