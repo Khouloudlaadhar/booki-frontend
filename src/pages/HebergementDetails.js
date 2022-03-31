@@ -1,9 +1,9 @@
 import React from 'react'
 
-function HebergementsDetails() {
+function HebergementDetails() {
   return (
     <div>HebergementsDetails</div>
   )
 }
 
-export default HebergementsDetails
+export default HebergementDetails
