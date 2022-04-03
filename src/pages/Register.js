@@ -45,7 +45,7 @@ function Register() {
     setRegisterData(prevItemData => ({ ...prevItemData, [e.target.name]: e.target.value }))
   }
   return (
-    <Form onSubmit={handleSubmit} className="container mt-5" >
+    <Form onSubmit={handleSubmit} className="container mt-5 border border-dark p-5" >
       <Form.Group className="mb-3">
         <Form.Label>First Name</Form.Label>
         <Form.Control
@@ -96,7 +96,7 @@ function Register() {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="w-100">
         Submit
       </Button>
     </Form>

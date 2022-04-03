@@ -13,18 +13,18 @@ import { logout } from '../redux/actions/userActionCreators'
 function AppNavbar() {
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
+        <Navbar collapseOnSelect expand="lg" bg="info" variant="dark"  >
+            <Container  >
                 <Navbar.Brand >
-                    <img src="/logo-booki.png" alt="Booki logo" width={120} />
+                    <img src="/logo-booki.png" alt="Booki logo" width={80} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav>
-                            <NavLink className="nav-link" to="/" >Home</NavLink>
+                            <NavLink className="nav-link" to="/" >Accueil</NavLink>
                             <NavLink className="nav-link" to="/hebergements" >Hebergements</NavLink>
-                            <NavLink className="nav-link" to="/activities">Activities</NavLink>
+                            <NavLink className="nav-link" to="/activities">Activites</NavLink>
                         </Nav>
                     </Nav>
 
@@ -32,12 +32,18 @@ function AppNavbar() {
 
                         <NavLink className="nav-link" to="/login" >
                         <Button variant="outline-secondary" size="lg" className="me-2" >
-                            <i className="bi bi-person"></i>
+                           se connecter
                         </Button>
                         
                             
                         </NavLink>
-
+                        <NavLink className="nav-link" to="/register" >
+                        <Button variant="outline-secondary" size="lg" className="me-2" >
+                           s'inscrire
+                        </Button>
+                        
+                            
+                        </NavLink>
                     </Nav>
 
                 </Navbar.Collapse>
