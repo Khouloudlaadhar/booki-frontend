@@ -11,19 +11,32 @@ export const logout = () => {
     return { type: LOGOUT }
 };
 
-export const requestLogin = (email, password) => {
+export const requestLogin = (email, password,history) => {
     return async (dispatch) => {
         try {
             dispatch(requestStarted())
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, { email, password })
             dispatch(requestSucceeded())
             const { message, user, token } = res.data
-            alertSuccess(message)
+            if (message) {
+
+                alertSuccess(message)
+               history.push('/')
+            }
             localStorage.setItem('token', token)
             localStorage.setItem('user', JSON.stringify(user))
             dispatch(login(user, token))
-        } catch (error) {
-            dispatch(requestFailed(error))
+           
+            
+        } catch (err) {
+            let errorMessage = err.message || 'Request failed'
+            if (err && err.response && err.response.data && err.response.data.error && typeof (err.response.data.error) === 'string') {
+                errorMessage = err.response.data.error
+            }
+            if (err && err.response && err.response.data && err.response.data.error && err.response.data.error.details) {
+                errorMessage = err.response.data.error.details[0] && err.response.data.error.details[0].message
+            }
+            dispatch(requestFailed(errorMessage))
         }
     }
 }
@@ -32,14 +45,21 @@ export const requestRegister = ({ firstName, lastName, email, password }, histor
         dispatch(requestStarted())
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, { firstName, lastName, email, password })
-            console.log({res});
+            console.log({ res });
             dispatch(requestSucceeded())
             if (res.data.message) {
                 alertSuccess(res.data.message)
             }
             history.push('/login')
-        } catch (err) {            
-            dispatch(requestFailed(err))            
+        } catch (err) {
+            let errorMessage = err.message || 'Request failed'
+            if (err && err.response && err.response.data && err.response.data.error && typeof (err.response.data.error) === 'string') {
+                errorMessage = err.response.data.error
+            }
+            if (err && err.response && err.response.data && err.response.data.error && err.response.data.error.details) {
+                errorMessage = err.response.data.error.details[0] && err.response.data.error.details[0].message
+            }
+            dispatch(requestFailed(errorMessage))
         }
     }
 }

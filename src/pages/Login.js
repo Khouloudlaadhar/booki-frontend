@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, InputGroup } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import NavLink from 'react-router-dom/NavLink'
+import { useHistory } from 'react-router-dom';
+import {NavLink } from 'react-router-dom'
 import { requestLogin } from '../redux/actions/userActionCreators'
 
 function Login() {
@@ -9,9 +10,10 @@ function Login() {
   const [password, setPassword] = useState('')
   const [passwordType, setPasswordType] = useState('password')
   const dispatch = useDispatch()
+  const history = useHistory()
   const handleSubmit = e => {
     e.preventDefault()
-    dispatch(requestLogin(email, password))
+    dispatch(requestLogin(email, password,history))
   }
   return (
     <Container className='mt-5 border border-dark p-5'>
@@ -29,15 +31,14 @@ function Login() {
             </Button>
           </InputGroup>
         </Form.Group>
-          <Button variant="primary" type="submit" className="w-100">
-            connecter
-          </Button>
+        <Button variant="primary" type="submit" className="w-100">
+          connecter
+        </Button>
       </Form>
-      <NavLink className="nav-link" to="/register" >
+      
         <Button clasName="mt-3 mx-auto" variant="secondary"  >
           Pas de compte ? Créez-en un
         </Button>
-      </NavLink>
     </Container>
   )
 }
