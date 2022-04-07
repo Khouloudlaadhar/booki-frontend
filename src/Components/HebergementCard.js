@@ -1,6 +1,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+import ReactStars from 'react-rating-stars-component';
 
+
+const ratingChanged = (newRating) => {
+    console.log(newRating)
+}
 
 function HebergementCard({ hebergement }) {
     return (
@@ -10,21 +15,23 @@ function HebergementCard({ hebergement }) {
                 <Card.Body>
                     <Card.Title> {hebergement.title} </Card.Title>
                     <Card.Text>
-                        {hebergement.description}
+                        <Card.Text>
+                            {hebergement.description}
+                        </Card.Text>
+                        <ReactStars  
+                            count={5}
+                            value={hebergement.rating}
+                            onChange={ratingChanged}
+                            size={24}
+                            edit={false}
+                        />
                     </Card.Text>
                     <Card.Text>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                   
-
+                        {hebergement.adress}
                     </Card.Text>
-
                 </Card.Body>
             </Card>
+
         </div>
     )
 }
