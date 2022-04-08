@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Button, Container, Form, InputGroup } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import {NavLink } from 'react-router-dom'
 import { requestLogin } from '../redux/actions/userActionCreators'
 
 function Login() {

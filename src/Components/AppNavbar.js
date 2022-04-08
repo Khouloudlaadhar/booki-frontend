@@ -4,9 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavLink from 'react-router-dom/NavLink'
 import Button from 'react-bootstrap/Button'
-import  CloseButton  from 'react-bootstrap/CloseButton'
-import { useDispatch } from 'react-redux'
-import { logout } from '../redux/actions/userActionCreators'
+
 
 
 
