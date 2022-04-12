@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SET_ALL_HEBERGEMENTS } from "../types/hebergementsTypes";
+import { Filter_ALL_HEBERGEMENTS, SET_ALL_HEBERGEMENTS } from "../types/hebergementsTypes";
 import { requestFailed, requestStarted, requestSucceeded } from "./feedbackActionCreators";
 
 
@@ -7,6 +7,8 @@ export const setAllHebergements = (hebergementsArray) => ({
     type: SET_ALL_HEBERGEMENTS,
     payload: hebergementsArray
 })
+
+
 
 
 export const fetchAllHebergements = () => {
@@ -22,3 +24,8 @@ export const fetchAllHebergements = () => {
         }
     }
 }
+
+export const FilterHebergements = (payload) => ({
+    type: Filter_ALL_HEBERGEMENTS,
+    payload: payload
+})

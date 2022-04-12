@@ -11,6 +11,7 @@ import FormControl from 'react-bootstrap/FormControl'
 function DisplayHebergements() {
 
     const hebergements = useSelector(state => state.hebergements.all)
+    const hebergementFiltered = useSelector(state => state.hebergements.filteredList)
     const [filter, setFilter] = useState('')
     const dispatch = useDispatch()
 
@@ -21,11 +22,7 @@ function DisplayHebergements() {
     const changeFilter = (e) => {
         setFilter(e.target.value)
     }
-    let hebergementSearch = hebergements.filter(item=> {
-        return Object.keys(item).some(key =>
-            item[key].toString().toLowerCase().includes(filter.toString().toLocaleLowerCase()))
-    });
-    console.log(hebergementSearch)
+   
     return (
         <Container>
             <Form className="d-flex m-5" >
@@ -39,7 +36,7 @@ function DisplayHebergements() {
                 <Button variant="outline-info">Rechercher</Button>
             </Form>
             <Row>
-                {hebergementSearch.map(hebergement => (
+                {hebergementFiltered.filter(hebergement=>hebergement.title.includes(filter)).map(hebergement => (
                     <HebergementCard hebergement={hebergement} />
                 ))}
             </Row>

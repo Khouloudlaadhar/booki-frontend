@@ -1,22 +1,31 @@
 import React from 'react'
-import { Button, Container } from 'react-bootstrap'
+import Container from 'react-bootstrap/Container'
 import DisplayHebergements from '../Components/DisplayHebergements'
-import { FaMoneyBillWave } from 'react-icons/fa';
-import { FaChild } from 'react-icons/fa';
-import { FaHeart } from 'react-icons/fa';
-import { FaDog } from 'react-icons/fa';
-import { BiInfoCircle } from 'react-icons/fa';
+import ButtonsFilter from '../Components/ButtonsFilter';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllHebergements, FilterHebergements } from '../redux/actions/hebergementActionCreators';
+import { requestStarted, requestSucceeded } from '../redux/actions/feedbackActionCreators';
+
 
 function Home() {
+  const hebergements = useSelector(state => state.hebergements.all)
+  const dispatch = useDispatch()
+
+  const filter = (button) => {
+   
+    const filterdData = hebergements.filter(hebergement => hebergement.categories === button)
+    console.log(filterdData)
+    dispatch(FilterHebergements(filterdData))
+    
+
+  }
+
+
   return (
     <Container className="mt-4">
+      
       <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
-      <div className="d-flex justify-content-between align-items-center m-4" >
-        <Button variant="primary" className="rounded-pill m-2" size="lg"><FaMoneyBillWave />Économique</ Button>
-        <Button variant="primary" className="rounded-pill m-2" size="lg">< FaChild />Familial</Button>
-        <Button variant="primary" className="rounded-pill m-2" size="lg"><FaHeart />Romantique</Button>
-        <Button variant="primary" className="rounded-pill m-2" size="lg"><FaDog />Animaux autorisés</Button>
-      </div>
+      <ButtonsFilter filter={filter} />
       <div className="d-flex  p-2">
         <i className="bi bi-info-circle text-primary px-2"></i>
         <p > Plus de 500 logements sont disponibles dans cette ville</p>
