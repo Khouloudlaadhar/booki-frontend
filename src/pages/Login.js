@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, InputGroup } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { requestLogin } from '../redux/actions/userActionCreators'
 
@@ -16,7 +17,7 @@ function Login() {
   }
   return (
     <Container className='mt-5 border border-dark p-5'>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className="m-5">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email </Form.Label>
           <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" />
@@ -34,10 +35,11 @@ function Login() {
           connecter
         </Button>
       </Form>
-      
-        <Button clasName="mt-3 mx-auto" variant="secondary"  >
+      <Link to="/register">
+        <Button className="m-2 mx-auto" variant="secondary"  >
           Pas de compte ? Créez-en un
         </Button>
+        </Link>
     </Container>
   )
 }
