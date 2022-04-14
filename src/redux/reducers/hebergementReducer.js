@@ -1,4 +1,4 @@
-import { Filter_ALL_HEBERGEMENTS, SET_ALL_HEBERGEMENTS } from "../types/hebergementsTypes";
+import { Filter_ALL_HEBERGEMENTS, SELECT_HEBERGEMENTS, SET_ALL_HEBERGEMENTS } from "../types/hebergementsTypes";
 
 const initialState = {
     all: [],
@@ -19,6 +19,9 @@ function hebergementReducer(state = initialState, action) {
                 ...state,
                filteredList: action.payload
             }
+            case SELECT_HEBERGEMENTS:
+            return { ...state, 
+                selected: action.payload };
         default:
             return state;
     }

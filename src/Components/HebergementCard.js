@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import ReactStars from 'react-rating-stars-component';
+import { Link } from 'react-router-dom';
 
 
 const ratingChanged = (newRating) => {
@@ -15,9 +16,6 @@ function HebergementCard({ hebergement }) {
                 <Card.Body>
                     <Card.Title> {hebergement.title} </Card.Title>
                     <Card.Text>
-                        <Card.Text>
-                            {hebergement.description}
-                        </Card.Text>
                         <ReactStars  
                             count={5}
                             value={hebergement.rating}
@@ -30,6 +28,7 @@ function HebergementCard({ hebergement }) {
                         {hebergement.adress}
                     </Card.Text>
                 </Card.Body>
+                <Link to={`/hebergemnts/${hebergement._id}`} className="btn btn-primary">Details...</Link>
             </Card>
 
         </div>
