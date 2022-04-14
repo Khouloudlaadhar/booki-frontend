@@ -12,6 +12,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { login } from "./redux/actions/userActionCreators";
 import { useDispatch } from "react-redux";
+import PublicRoute from "./routes/PublicRoute";
+import PrivateRoute from "./routes/PrivateRoute";
+
 
 
 
@@ -31,13 +34,13 @@ function App() {
     <Router>
     <AppNavbar/>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
-        <Route path='/hebergements' component={Hebergements} />
-        <Route exact path='/activities' component={Activities} />
-        <Route exact path='/hebergemnts/:id' component={HebergementDetails} />
-        <Route exact path='/activities/:id' component={ActivitiesDetails} />
+        <PublicRoute exact path='/' component={Home} />
+        <PublicRoute exact path='/login' component={Login} />
+        <PublicRoute exact path='/register' component={Register} />
+        <PrivateRoute path='/hebergements' component={Hebergements} />
+        <PrivateRoute exact path='/activities' component={Activities} />
+        <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />
+        <PrivateRoute exact path='/activities/:id' component={ActivitiesDetails} />
         <Route  component={NotFound} />
       </Switch>
     </Router>
