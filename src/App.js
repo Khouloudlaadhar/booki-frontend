@@ -10,10 +10,20 @@ import GlobalLoading from "./Components/GlobalLoading";
 import AppNavbar from "./Components/AppNavbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { login } from "./redux/actions/userActionCreators";
+import { useDispatch } from "react-redux";
 
 
 
 function App() {
+
+  const dispatch = useDispatch()
+  const token = localStorage.getItem('token')
+  const user = JSON.parse(localStorage.getItem('user'))
+  if (token && user) {
+    dispatch(login(user, token))
+  }
+
   return (
     <>
     <GlobalLoading/>
