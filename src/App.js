@@ -7,7 +7,6 @@ import HebergementDetails from "./pages/HebergementDetails";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import GlobalLoading from "./Components/GlobalLoading";
-import AppNavbar from "./Components/AppNavbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { login } from "./redux/actions/userActionCreators";
@@ -30,13 +29,11 @@ function App() {
   return (
     <>
     <GlobalLoading/>
-   
     <Router>
-    <AppNavbar/>
       <Switch>
-        <PublicRoute exact path='/' component={Home} />
         <PublicRoute exact path='/login' component={Login} />
         <PublicRoute exact path='/register' component={Register} />
+        <PrivateRoute exact path='/' component={Home} />
         <PrivateRoute path='/hebergements' component={Hebergements} />
         <PrivateRoute exact path='/activities' component={Activities} />
         <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />

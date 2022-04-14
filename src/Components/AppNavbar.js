@@ -2,11 +2,8 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
-import NavLink from 'react-router-dom/NavLink'
+import { NavLink } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-
-
-
 
 function AppNavbar() {
     return (
@@ -19,31 +16,20 @@ function AppNavbar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav>
-                            <NavLink className="nav-link" to="/" >Accueil</NavLink>
-                            <NavLink className="nav-link" to="/hebergements" >Hebergements</NavLink>
-                            <NavLink className="nav-link" to="/activities">Activites</NavLink>
-                        </Nav>
+
                     </Nav>
-
                     <Nav>
-
                         <NavLink className="nav-link" to="/login" >
-                        <Button variant="outline-secondary" size="lg" className="me-2" >
-                           se connecter
-                        </Button>
-                        
-                            
+                            <Button variant="outline-secondary" size="lg" className="me-2" >
+                                se connecter
+                            </Button>
                         </NavLink>
                         <NavLink className="nav-link" to="/register" >
-                        <Button variant="outline-secondary" size="lg" className="me-2" >
-                           s'inscrire
-                        </Button>
-                        
-                            
+                            <Button variant="outline-secondary" size="lg" className="me-2" >
+                                s'inscrire
+                            </Button>
                         </NavLink>
                     </Nav>
-
                 </Navbar.Collapse>
             </Container>
         </Navbar>
