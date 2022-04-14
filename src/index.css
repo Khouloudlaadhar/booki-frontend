@@ -20,3 +20,11 @@ code {
 .toast-success div {
   background-color: green;
 }
+
+.not-found-page-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
