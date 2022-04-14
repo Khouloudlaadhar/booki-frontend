@@ -13,6 +13,7 @@ import { login } from "./redux/actions/userActionCreators";
 import { useDispatch } from "react-redux";
 import PublicRoute from "./routes/PublicRoute";
 import PrivateRoute from "./routes/PrivateRoute";
+import CustomRoute from "./routes/CustomRoute";
 
 
 
@@ -34,11 +35,11 @@ function App() {
         <PublicRoute exact path='/login' component={Login} />
         <PublicRoute exact path='/register' component={Register} />
         <PrivateRoute exact path='/' component={Home} />
-        <PrivateRoute path='/hebergements' component={Hebergements} />
+        <PrivateRoute exact path='/hebergements' component={Hebergements} />
         <PrivateRoute exact path='/activities' component={Activities} />
         <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />
         <PrivateRoute exact path='/activities/:id' component={ActivitiesDetails} />
-        <Route  component={NotFound} />
+        <CustomRoute  component={NotFound} />
       </Switch>
     </Router>
     </>
