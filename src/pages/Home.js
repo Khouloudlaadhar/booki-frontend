@@ -1,10 +1,10 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
-import DisplayHebergements from '../Components/DisplayHebergements'
-import ButtonsFilter from '../Components/ButtonsFilter';
+import DisplayHebergements from '../components/DisplayHebergements'
+import ButtonsFilter from '../components/ButtonsFilter';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllHebergements, FilterHebergements } from '../redux/actions/hebergementActionCreators';
-import { requestStarted, requestSucceeded } from '../redux/actions/feedbackActionCreators';
+import { FilterHebergements } from '../redux/actions/hebergementActionCreators';
+
 
 
 function Home() {

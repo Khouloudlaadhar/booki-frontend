@@ -1,5 +1,5 @@
 import React from 'react'
-import AppNavbar from '../Components/AppNavbar'
+import AppNavbar from '../components/AppNavbar'
 
 export default function OutsideLayout(props) {
     return (

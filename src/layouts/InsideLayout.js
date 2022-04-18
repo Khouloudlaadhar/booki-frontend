@@ -1,5 +1,5 @@
 import React from 'react'
-import AppNavbarInside from '../Components/AppNavbarInside'
+import AppNavbarInside from '../components/AppNavbarInside'
 
 function InsideLayout(props) {
     return (

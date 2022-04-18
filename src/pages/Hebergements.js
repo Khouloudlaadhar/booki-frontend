@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import DisplayHebergements from '../Components/DisplayHebergements'
+import DisplayHebergements from '../components/DisplayHebergements'
 
 
 
