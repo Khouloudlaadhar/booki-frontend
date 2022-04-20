@@ -7,6 +7,7 @@ import ReactStars from 'react-rating-stars-component';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { Form } from 'react-bootstrap';
+import Services from '../components/Services';
 
 
 
@@ -31,17 +32,17 @@ const HebergementDetails = (props) => {
           <div >
             <div className="d-flex justify-content-between mb-2">
 
-            <div className="d-flex m-2">
-              <h3>{selectedHebergement.title}</h3>
-              <ReactStars
-                count={5}
-                value={selectedHebergement.rating}
-                onChange={ratingChanged}
-                size={24}
-                edit={false}
-              />
-            </div>
-            <Button>Reserver Hotel</Button>
+              <div className="d-flex m-2">
+                <h3>{selectedHebergement.title}</h3>
+                <ReactStars
+                  count={5}
+                  value={selectedHebergement.rating}
+                  onChange={ratingChanged}
+                  size={24}
+                  edit={false}
+                />
+              </div>
+              <Button>Reserver Hotel</Button>
             </div>
 
             <Card className="shadow-lg p-3 mb-5 bg-body">
@@ -62,11 +63,24 @@ const HebergementDetails = (props) => {
                   />
                 </Card.Text>
                 <Card.Text>
+                <i className="bi bi-geo-alt-fill"></i>
                   {selectedHebergement.adress}
                 </Card.Text>
               </Card.Body>
 
             </Card>
+            <Card className="bg-warning shadow-lg p-3 mb-5 ">
+              <div className="d-flex ">
+                <i className=" pe-2 bi bi-people"></i>
+                <p>  Garantissez-vous un super tarif pour votre prochain séjour.</p>
+              </div>
+              <div className="d-flex ">
+                <i className=" pe-2 bi bi-check-circle"></i>
+                <p>  Confirmez votre réservation aujourd'hui car les prix peuvent augmenter.</p>
+              </div>
+            </Card>
+
+            <Services />
             <Card className="shadow-lg p-3 mb-5 bg-body">
 
               <div className="m-2">
