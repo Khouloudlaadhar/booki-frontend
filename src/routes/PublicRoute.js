@@ -13,7 +13,7 @@ function PublicRoute({ component: Component, ...rest }) {
             {...rest}
             component={(props) => (
                 isAuth
-                    ? <Redirect to='/' />
+                    ? <Redirect to='/hebergements' />
                     : <OutsideLayout><Component {...props} /></OutsideLayout>
                     
             )}

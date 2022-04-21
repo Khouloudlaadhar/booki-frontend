@@ -8,10 +8,10 @@ import Button from 'react-bootstrap/Button'
 function AppNavbar() {
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="info" variant="dark"  >
+        <Navbar collapseOnSelect expand="lg" variant="dark"   className="Navbar"  >
             <Container  >
                 <Navbar.Brand >
-                    <img src="/logo-booki.png" alt="Booki logo" width={80} />
+                    <img src="/logo-booki.png" alt="Booki logo" width={100} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

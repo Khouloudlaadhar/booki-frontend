@@ -16,11 +16,11 @@ function Login() {
     dispatch(requestLogin(email, password, history))
   }
   return (
-    <Container className='mt-5 border border-dark p-5'>
+    <Container className='my-5 border border-dark p-5 w-50' >
       <Form onSubmit={handleSubmit} className="m-5">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email </Form.Label>
-          <Form.Control
+             <Form.Control
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter email" />
