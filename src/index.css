@@ -11,16 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
+:root {
+  --primaryColor: #0000ff;
+  --secondaryColor:red;
+  --tertiaryColor: green;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+   --mainSpacing: 3px;
+   --primary-color: #192440;
+   --secondary-color: #00ffad;
+   --tertiary-color: #292b2c;
+   --quaternary-color: #ffffff;
+ 
+}
 .toast-error div {
-  background-color: red;
+  background-color: var(--secondaryColor);
 }
 
 .toast-success div {
-  background-color: green;
+  background-color: var(--tertiaryColor);
 }
-
+/* Not Found */
 .not-found-page-image {
   width: 100%;
   max-width: 600px;
@@ -28,18 +46,74 @@ code {
   margin-right: auto;
   margin-left: auto;
 }
+/* end of Not Found */
 
+/* Forgot and reset password */
 .error-msg,
 .success-msg {
   width: 100%;
   padding: 15px;
   margin: 5px 0;
   font-size: 14px;
-  background-color: darkred;
+  background-color: var(--secondaryColor);
   color: white;
   border-radius: 5px;
   text-align: center;
 }
 .success-msg{
-  background-color: darkgreen;
+  background-color: var(--tertiaryColor);
 }
+/* end of Forgot and reset password */
+
+/* Navbar and AppNavbar */
+.Navbar{
+  background-color: var(--primary-color);
+  height: 20vh!important;
+}
+
+
+/* end of Navbar and AppNavbar */
+
+/* Footer */
+footer {
+  padding: 3.2rem 4.8rem;
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+
+@media not all and (min-width: 768px) {
+  footer .container {
+      flex-direction: column;
+  }
+}
+
+
+footer #social-media {
+  display: flex;
+  gap: 2rem;
+}
+
+footer #social-media a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--quaternary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* end of Footer */
+
+
+

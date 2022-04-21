@@ -16,10 +16,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import CustomRoute from "./routes/CustomRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassoword from "./pages/ResetPassoword";
-
-
-
-
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -40,13 +37,14 @@ function App() {
           <PublicRoute exact path='/register' component={Register} />
           <PublicRoute exact path='/forgot-password' component={ForgotPassword} />
           <PublicRoute exact path='/password-reset/:id/:token' component={ResetPassoword} />
-          <PrivateRoute exact path='/' component={Home} />
+          <CustomRoute  exact path='/' component={Home} />
           <PrivateRoute exact path='/hebergements' component={Hebergements} />
-          <PrivateRoute exact path='/activities' component={Activities} />
           <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />
+          <PrivateRoute exact path='/activities' component={Activities} />
           <PrivateRoute exact path='/activities/:id' component={ActivitiesDetails} />
           <CustomRoute component={NotFound} />
         </Switch>
+        <Footer/>
       </Router>
     </>
 
