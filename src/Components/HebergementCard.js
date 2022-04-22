@@ -28,7 +28,7 @@ function HebergementCard({ hebergement }) {
                         {hebergement.adress}
                     </Card.Text>
                 </Card.Body>
-                <Link to={`/hebergemnts/${hebergement._id}`} className="btn btn-primary">Details...</Link>
+                <Link to={`/hebergemnts/${hebergement._id}`} className="btn btn-primary">Voir l'offre</Link>
             </Card>
 
         </div>

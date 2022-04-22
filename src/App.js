@@ -17,6 +17,9 @@ import CustomRoute from "./routes/CustomRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassoword from "./pages/ResetPassoword";
 import Footer from "./components/Footer";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
 
 
 function App() {
@@ -42,6 +45,8 @@ function App() {
           <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />
           <PrivateRoute exact path='/activities' component={Activities} />
           <PrivateRoute exact path='/activities/:id' component={ActivitiesDetails} />
+          <CustomRoute exact path='/about' component={About} />
+          <CustomRoute exact path='/contact' component={Contact} />
           <CustomRoute component={NotFound} />
         </Switch>
         <Footer/>

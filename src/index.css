@@ -117,3 +117,19 @@ footer #social-media a {
 
 
 
+/* aboutus */
+.aboutus {
+  margin-top: 150px!important;
+}
+.about_company,.team{
+  padding: 60px 30px;
+}
+.about_info{
+  letter-spacing: 40;
+}
+
+.connect{
+  font-size: 44px!important;
+  padding: 5px 8px;
+}
+/* end of about us */

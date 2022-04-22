@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 function AppNavbar() {
     return (
 
-        <Navbar collapseOnSelect expand="lg" variant="dark"   className="Navbar"  >
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="Navbar"  >
             <Container  >
                 <Navbar.Brand >
                     <img src="/logo-booki.png" alt="Booki logo" width={100} />
@@ -16,7 +16,9 @@ function AppNavbar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-
+                        <NavLink className="nav-link" to="/" >Accueil</NavLink>
+                        <NavLink className="nav-link" to="/about" >A propos</NavLink>
+                        <NavLink className="nav-link" to="/contact" >Contact</NavLink>
                     </Nav>
                     <Nav>
                         <NavLink className="nav-link" to="/login" >

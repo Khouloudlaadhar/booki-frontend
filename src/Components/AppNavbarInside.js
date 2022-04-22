@@ -25,7 +25,7 @@ function AppNavbarInside() {
                             <NavLink className="nav-link" to="/" >Accueil</NavLink>
                             <NavLink className="nav-link" to="/hebergements" >Hebergements</NavLink>
                             <NavLink className="nav-link" to="/activities">Activites</NavLink>
-                            <NavLink className="nav-link" to="/about" >About</NavLink>
+                            <NavLink className="nav-link" to="/about" >A propos</NavLink>
                             <NavLink className="nav-link" to="/contact" >Contact</NavLink>
                         </Nav>
                     </Nav>
