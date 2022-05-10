@@ -3,7 +3,7 @@ import { CDBCarousel, CDBCarouselItem, CDBCarouselInner, CDBView, CDBContainer }
 
 export const Carousel = () => {
   return (
-    <CDBContainer>
+    <CDBContainer className="mt-5 ">
       <CDBContainer>
         <CDBCarousel
           activeItem={1}
