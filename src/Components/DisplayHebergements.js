@@ -36,7 +36,7 @@ function DisplayHebergements() {
                 <Button variant="outline-info">Rechercher</Button>
             </Form>
             <Row>
-                {hebergementFiltered.filter(hebergement=>hebergement.title.includes(filter)).map(hebergement => (
+                {hebergementFiltered.filter(hebergement=>hebergement.title.includes(filter) || hebergement.adress.includes(filter) ).map(hebergement => (
                     <HebergementCard hebergement={hebergement} />
                 ))}
             </Row>
