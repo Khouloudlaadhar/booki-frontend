@@ -73,7 +73,7 @@ function About() {
             <div className="row mb-5">
                 <div className="col-md-4 col-12 mx-auto my-2">
                     <div className="card border-0 shadow-lg p-4">
-                        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" className="card-img-top" alt="director" />
+                        <img src={require('../images/imag/director.png')} className="card-img-top" alt="director" />
                         <div className="card-body">
                             <h5 className="card-title mb-0">Director</h5>
                             <div className="card-text text-black-50">CEO <p className="float-right">5 years</p>
@@ -90,7 +90,7 @@ function About() {
                 </div>
                 <div className="col-md-4 col-12 mx-auto my-2">
                     <div className="card border-0 shadow-lg p-4">
-                        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" className="card-img-top" alt="director" />
+                        <img src={require('../images/imag/manager 1.png')} height={220} className="card-img-top" alt="manager1" />
                         <div className="card-body">
                             <h5 className="card-title mb-0">Team Member</h5>
                             <div className="card-text text-black-50">Manager <p className="float-right">4 years</p>
@@ -107,7 +107,7 @@ function About() {
                 </div>
                 <div className="col-md-4 col-12 mx-auto my-2">
                     <div className="card border-0 shadow-lg p-4">
-                        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" className="card-img-top" alt="director" />
+                        <img src={require('../images/imag/manager2.png')} height={220} className="card-img-top" alt="manager2" />
                         <div className="card-body">
                             <h5 className="card-title mb-0">Team Member</h5>
                             <div className="card-text text-black-50">Manager <p className="float-right">3 years</p>
