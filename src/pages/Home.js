@@ -5,6 +5,7 @@ import ButtonsFilter from '../components/ButtonsFilter';
 import { useDispatch, useSelector } from 'react-redux';
 import { FilterHebergements } from '../redux/actions/hebergementActionCreators';
 import { Carousel } from '../components/Carousel';
+import Header from '../components/Header/Header';
 
 
 
@@ -23,8 +24,9 @@ function Home() {
 
 
   return (
-    <Container className="mt-4">
-      <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
+    <Container className="mt-0 mb-5">
+      <Header/>
+      
       <Carousel />
       <ButtonsFilter filter={filter} />
       <div className="d-flex  p-2">
