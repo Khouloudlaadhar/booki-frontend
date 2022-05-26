@@ -14,17 +14,21 @@ function HebergementCard({ hebergement }) {
             <Card className="shadow-lg p-3 mb-5 bg-body rounded rounded-4">
                 <Card.Img variant="top" src={hebergement.photo} height={150} style={{ objectFit: 'contain' }} />
                 <Card.Body>
-                    <Card.Title> {hebergement.title} </Card.Title>
-                    <Card.Text>
-                        <ReactStars  
+                    <Card.Title className=' d-flex gap-2'>
+                         {`${hebergement.title}:`}
+                        <ReactStars
                             count={5}
                             value={hebergement.rating}
                             onChange={ratingChanged}
                             size={24}
                             edit={false}
                         />
+                    </Card.Title>
+                    <Card.Text>
+                        {hebergement.description}
                     </Card.Text>
                     <Card.Text>
+                        <i className="bi bi-geo-alt-fill me-2"></i>
                         {hebergement.adress}
                     </Card.Text>
                 </Card.Body>
