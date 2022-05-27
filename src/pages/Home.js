@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FilterHebergements } from '../redux/actions/hebergementActionCreators';
 import { Carousel } from '../components/Carousel';
 import Header from '../components/Header/Header';
+import DisplayActivities from '../components/DisplaydActivities';
 
 
 
@@ -34,9 +35,13 @@ function Home() {
         <p > Plus de 500 logements sont disponibles dans cette ville</p>
       </div>
       <div>
-        <h2 > Meilleurs choix d'hôtels en Hammamet</h2>
+        <h2 > Meilleurs choix d'hôtels en Hammamet :</h2>
       </div>
       <DisplayHebergements />
+      <div>
+        <h2 >Activités, lieux d'intérêt et bon plan à Hammamet :</h2>
+      </div>
+      <DisplayActivities />
     </Container>
   )
 }

@@ -12,7 +12,7 @@ function HebergementCard({ hebergement }) {
     return (
         <div className='col-12 col-sm-8 col-md-6 col-lg-4 p-2'>
             <Card className="shadow-lg p-3 mb-5 bg-body rounded rounded-4">
-                <Card.Img variant="top" src={hebergement.photo} height={150} style={{ objectFit: 'contain' }} />
+                <Card.Img variant="top" src={hebergement.photo} height={200} style={{ objectFit: 'contain' }} />
                 <Card.Body>
                     <Card.Title className=' d-flex gap-2'>
                          {`${hebergement.title}:`}
