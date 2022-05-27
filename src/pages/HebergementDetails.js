@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { Form } from 'react-bootstrap';
 import Services from '../components/Services';
+import { Link } from 'react-router-dom';
 
 
 
@@ -59,8 +60,9 @@ const HebergementDetails = () => {
                       edit={false}
                     />
                   </div>
-                  <Button variant="secondary">Dates & tarifs</Button>
-
+                  <Link to={`/hebergemnts/${selectedHebergement._id}`} >
+                    <Button variant="secondary">Dates & tarifs</Button>
+                  </Link>
                 </div>
                 <Card className="shadow-lg p-3 mb-5 bg-body">
                   <div className='d-flex justify-content-center' >
@@ -71,7 +73,7 @@ const HebergementDetails = () => {
                   <Card.Body>
                     <Card.Title> {selectedHebergement.destination} </Card.Title>
                     <Card.Text>
-                    {selectedHebergement.description}
+                      {selectedHebergement.description}
                     </Card.Text>
                     <Card.Text>
                       <i className="bi bi-geo-alt-fill me-2"></i>
@@ -94,24 +96,24 @@ const HebergementDetails = () => {
             </Card>
 
             <Services />
-            <Card className="shadow-lg p-3 mb-5 bg-body">
+            <Card className="shadow-lg p-3 mb-5 bg-body" >
 
-              <div className="m-2">
+              <div  className="m-2 text-decoration-underline">
                 <h3>Dates & tarifs :</h3>
 
               </div>
               <Form>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                  <Form.Label>Date d'arrivée</Form.Label>
+                  <Form.Label className='text-primary fw-bold'>Date d'arrivée :</Form.Label>
                   <Form.Control type="date" placeholder="dd/mm/yyyy" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                  <Form.Label>Date depart</Form.Label>
+                  <Form.Label className='text-primary fw-bold'>Date depart :</Form.Label>
                   <Form.Control type="date" placeholder="dd/mm/yyyy" />
                 </Form.Group>
                 <Form.Group className="mb-1 " controlId="exampleForm.ControlInput1">
-                  <Form.Label>Chambre et occupation</Form.Label>
+                  <Form.Label className='text-primary fw-bold'>Chambre et occupation :</Form.Label>
                   <div className=" d-flex justify-content-between">
                     <Form.Control type="text" placeholder="1 chambre 1 adulte 0 enfant" />
                     <Button variant="primary"  > Vérifier la disponibilité</Button>
@@ -125,8 +127,8 @@ const HebergementDetails = () => {
             </Card>
 
             <Card>
-              <div className="m-3">
-                <h3>Description :</h3>
+              <div className="m-3 ">
+                <h3 className='text-decoration-underline'>Description :</h3>
                 <p>{selectedHebergement.description}</p>
               </div>
             </Card>
