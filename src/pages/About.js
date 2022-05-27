@@ -73,7 +73,7 @@ function About() {
             <div className="row mb-5">
                 <div className="col-md-4 col-12 mx-auto my-2">
                     <div className="card border-0 shadow-lg p-4">
-                        <img src={require('../images/imag/director.png')} className="card-img-top" alt="director" />
+                        <img src={require('../images/imag/director.png')} height={220} className="card-img-top" alt="director" />
                         <div className="card-body">
                             <h5 className="card-title mb-0">Director</h5>
                             <div className="card-text text-black-50">CEO <p className="float-right">5 years</p>

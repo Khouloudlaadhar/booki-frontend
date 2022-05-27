@@ -14,7 +14,7 @@ function Services() {
 
         <Card className="shadow-lg p-3 mb-5 bg-body">
             <div className="m-3">
-                <h3>Services & équipements:</h3>
+                <h3 className='text-decoration-underline'>Services & équipements:</h3>
                 <Table striped bordered hover >
 
                     <tbody>

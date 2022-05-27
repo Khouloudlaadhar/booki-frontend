@@ -19,6 +19,7 @@ import ResetPassoword from "./pages/ResetPassoword";
 import Footer from "./components/Footer";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import HebergementsDestination from "./pages/HebergementsDestination";
 
 
 
@@ -43,6 +44,7 @@ function App() {
           <CustomRoute  exact path='/' component={Home} />
           <PrivateRoute exact path='/hebergements' component={Hebergements} />
           <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />
+          <PrivateRoute exact path='/hebergements-details' component={HebergementsDestination} />
           <PrivateRoute exact path='/activities' component={Activities} />
           <PrivateRoute exact path='/activities/:id' component={ActivitiesDetails} />
           <CustomRoute exact path='/about' component={About} />

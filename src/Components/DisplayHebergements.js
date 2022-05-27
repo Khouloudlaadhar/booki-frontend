@@ -10,7 +10,6 @@ import FormControl from 'react-bootstrap/FormControl'
 
 function DisplayHebergements() {
 
-    const hebergements = useSelector(state => state.hebergements.all)
     const hebergementFiltered = useSelector(state => state.hebergements.filteredList)
     const [filter, setFilter] = useState('')
     const dispatch = useDispatch()

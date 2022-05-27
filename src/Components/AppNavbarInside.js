@@ -30,7 +30,7 @@ function AppNavbarInside() {
                         </Nav>
                     </Nav>
                     <Nav>
-                    <i className="bi bi-box-arrow-right text-white pe-2 " onClick={() => dispatch(logout())}><span className=" m-2 text-white">Se déconnecter</span></i> f
+                    <i className="bi bi-box-arrow-right text-white pe-2 " onClick={() => dispatch(logout())}><span className=" m-2 text-white">Se déconnecter</span></i> 
 
                     </Nav>
 

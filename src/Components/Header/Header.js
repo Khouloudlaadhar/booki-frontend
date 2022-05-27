@@ -5,11 +5,11 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 
 const Header = () => {
-
+ 
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDate] = useState([
@@ -42,7 +42,8 @@ const Header = () => {
   const dispatch = useDispatch()
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
-    history.push('/hebergements')
+  
+    history.push('/hebergements-details')
   };
 
   return (
