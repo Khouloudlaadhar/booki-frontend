@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button'
 
 
@@ -10,27 +11,31 @@ import { useDispatch } from 'react-redux';
 import { fetchAllHebergements } from '../redux/actions/hebergementActionCreators';
 
 
-function ButtonsFilter({filter }) {
+function ButtonsFilter({ filter }) {
   const dispatch = useDispatch()
   return (
-    <div className="d-flex justify-content-between align-items-center m-4" >
-    
-      <Button variant="primary" className="rounded-pill m-2" size="lg"
-        onClick={() => filter('économiques')}>
-        <FaMoneyBillWave />Economiques</ Button>
-      <Button variant="primary" className="rounded-pill m-2" size="lg"
-        onClick={() => filter('familial')}>
-        < FaChild />Familial</Button>
-      <Button variant="primary" className="rounded-pill m-2" size="lg"
-        onClick={() => filter('romantiques')}>
-        <FaHeart />Romantique</Button>
-      <Button variant="primary" className="rounded-pill m-2" size="lg"
-        onClick={() => filter('animaux autorisés')}>
-        <FaDog />Animaux autorisés</Button>
+    <Container className=''>
+      <div className="buttonFilter d-flex justify-content-between align-items-center m-4" >
         <Button variant="primary" className="rounded-pill m-2" size="lg"
-        onClick={() =>dispatch(fetchAllHebergements())}>
-        <i className="bi bi-card-list"></i>Tous</ Button>
-    </div>
+          onClick={() => dispatch(fetchAllHebergements())}>
+          <i className="bi bi-card-list"></i>Tous</ Button>
+        <Button variant="primary" className="rounded-pill m-2" size="lg"
+          onClick={() => filter('familial')}>
+          < FaChild />Familial</Button>
+        <Button variant="primary" className="rounded-pill m-2" size="lg"
+          onClick={() => filter('romantiques')}>
+          <FaHeart />Romantique</Button>
+        <Button variant="primary" className="rounded-pill m-2" size="lg"
+          onClick={() => filter('économiques')}>
+          <FaMoneyBillWave />Economiques</ Button>
+
+
+        <Button variant="primary" className="rounded-pill m-2" size="lg"
+          onClick={() => filter('animaux autorisés')}>
+          <FaDog />Animaux autorisés</Button>
+
+      </div>
+    </Container>
   )
 }
 

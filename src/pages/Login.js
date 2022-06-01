@@ -16,7 +16,7 @@ function Login() {
     dispatch(requestLogin(email, password, history))
   }
   return (
-    <Container className='my-5 border border-dark p-5 w-50' >
+    <Container className='my-5 border border-dark p-5 ' >
       <Form onSubmit={handleSubmit} className="m-5">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email </Form.Label>
@@ -43,11 +43,11 @@ function Login() {
         <Button variant="primary" type="submit" className="w-100">
           connecter
         </Button>
-        <Link to={'/forgot-password'} className="text-right" >
+        <Link to={'/forgot-password'} className="text-right d_flex " >
           <p>Mode de passe oublié?</p></Link>
       </Form>
       <Link to="/register">
-        <Button className="m-2 mx-auto" variant="secondary"  >
+        <Button className=" mx-auto" variant="secondary"  >
           Pas de compte ? Créez-en un
         </Button>
       </Link>

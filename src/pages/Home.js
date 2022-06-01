@@ -35,11 +35,11 @@ function Home() {
         <p > Plus de 500 logements sont disponibles dans cette ville</p>
       </div>
       <div>
-        <h2 > Meilleurs choix d'hôtels en Hammamet :</h2>
+        <h2 className='text' > Meilleurs choix d'hôtels en Hammamet :</h2>
       </div>
       <DisplayHebergements />
       <div>
-        <h2 >Activités, lieux d'intérêt et bon plan à Hammamet :</h2>
+        <h2 className='text'>Activités, lieux d'intérêt et bon plan à Hammamet :</h2>
       </div>
       <DisplayActivities />
     </Container>

@@ -24,7 +24,7 @@ function DisplayHebergements() {
    
     return (
         <Container>
-            <Form className="d-flex m-5" >
+            <Form className="search d-flex m-5" >
                 <FormControl
                     type="text"
                     placeholder="Trouvez vos meilleurs hebergements "
