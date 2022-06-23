@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 function AppNavbar() {
     return (
 
-        <Navbar collapseOnSelect expand="lg" variant="dark" className="Navbar"  >
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="Navbar py-2"  >
             <Container  >
                 <Navbar.Brand >
                     <img src="/logo-booki.png" alt="Booki logo" width={100} />
