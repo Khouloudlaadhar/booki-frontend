@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useRef} from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchHebergementById } from '../redux/actions/hebergementActionCreators';
@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const HebergementDetails = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
@@ -20,7 +21,10 @@ const HebergementDetails = () => {
     dispatch(fetchHebergementById(id))
   }, [dispatch, id])
 
-
+  const titleRef = useRef();
+  function handleClick() {
+    titleRef.current.scrollIntoView({ behavior: "smooth" });
+  }
   const ratingChanged = (newRating) => {
     console.log(newRating)
   }
@@ -61,7 +65,7 @@ const HebergementDetails = () => {
                     />
                   </div>
                   <Link to={`/hebergemnts/${selectedHebergement._id}`} >
-                    <Button variant="secondary">Dates & tarifs</Button>
+                    <Button variant="secondary" onClick={handleClick}>Dates & tarifs</Button>
                   </Link>
                 </div>
                 <Card className="shadow-lg p-3 mb-5 bg-body">
@@ -99,7 +103,7 @@ const HebergementDetails = () => {
             <Card className="shadow-lg p-3 mb-5 bg-body" >
 
               <div  className="m-2 text-decoration-underline">
-                <h3>Dates & tarifs :</h3>
+                <h3 ref={titleRef}>Dates & tarifs :</h3>
 
               </div>
               <Form>

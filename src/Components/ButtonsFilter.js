@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useRef } from "react";
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button'
 
@@ -13,29 +14,55 @@ import { fetchAllHebergements } from '../redux/actions/hebergementActionCreators
 
 function ButtonsFilter({ filter }) {
   const dispatch = useDispatch()
+  const filterHotel = useRef(null);
+
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <Container className=''>
-      <div className="buttonFilter d-flex justify-content-between align-items-center m-4" >
+    <Container >
+      <div className="buttonFilter d-flex justify-content-between align-items-center m-4" ref={filterHotel}>
         <Button variant="primary" className="rounded-pill m-2" size="lg"
-          onClick={() => dispatch(fetchAllHebergements())}>
+          onClick={function () {
+            scrollToSection(filterHotel)
+            dispatch(fetchAllHebergements())
+          }}>
           <i className="bi bi-card-list"></i>Tous</ Button>
         <Button variant="primary" className="rounded-pill m-2" size="lg"
-          onClick={() => filter('familial')}>
+          onClick={
+            function () {
+              scrollToSection(filterHotel)
+              filter('familial')
+            }}>
           < FaChild />Familial</Button>
         <Button variant="primary" className="rounded-pill m-2" size="lg"
-          onClick={() => filter('romantiques')}>
+          onClick={function () {
+            scrollToSection(filterHotel)
+            filter('romantiques')
+          }}>
           <FaHeart />Romantique</Button>
         <Button variant="primary" className="rounded-pill m-2" size="lg"
-          onClick={() => filter('économiques')}>
+          onClick={function () {
+            scrollToSection(filterHotel)
+            filter('économiques')
+          }}>
           <FaMoneyBillWave />Economiques</ Button>
 
 
         <Button variant="primary" className="rounded-pill m-2" size="lg"
-          onClick={() => filter('animaux autorisés')}>
-          <FaDog />Animaux autorisés</Button>
+          onClick={function () {
+            scrollToSection(filterHotel)
+            filter('animaux autorisés')
+          }} >
+            <FaDog />Animaux autorisés</Button>
 
-      </div>
-    </Container>
+    </div>
+    </Container >
   )
 }
 

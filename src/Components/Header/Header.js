@@ -19,9 +19,10 @@ const Header = () => {
       key: "selection",
     },
   ]);
-  console.log({ dates });
-  console.log({ destination });
 
+  
+  
+ 
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -37,14 +38,20 @@ const Header = () => {
       };
     });
   };
-  console.log({ options });
+ 
   const history = useHistory()
   const dispatch = useDispatch()
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
   
     history.push('/hebergements-details')
-  };
+  }
+
+
+  console.log({ dates })
+  console.log({ destination })
+  console.log({ options })
+ 
 
   return (
     <div className="header">

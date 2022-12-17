@@ -5,7 +5,7 @@ import ListHebergement from '../components/ListHebergement'
 function HebergementsDestination() {
   return (
     <Container className="mt-4">
-      <h1>Hammamet:les meilleures hébergements </h1>
+      <h1>Hammamet: Les meilleures hébergements </h1>
       <ListHebergement />
     </Container>
   )
