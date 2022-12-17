@@ -107,27 +107,28 @@ const HebergementDetails = () => {
 
               </div>
               <Form>
-
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <div className='d-flex col-12'>
+                <Form.Group className="mb-3 col-6" controlId="exampleForm.ControlInput1">
                   <Form.Label className='text-primary fw-bold'>Date d'arrivée :</Form.Label>
                   <Form.Control type="date" placeholder="dd/mm/yyyy" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Group className="mb-3 col-6" controlId="exampleForm.ControlInput1">
                   <Form.Label className='text-primary fw-bold'>Date depart :</Form.Label>
                   <Form.Control type="date" placeholder="dd/mm/yyyy" />
                 </Form.Group>
+                </div>
                 <Form.Group className="mb-1 " controlId="exampleForm.ControlInput1">
                   <Form.Label className='text-primary fw-bold'>Chambre et occupation :</Form.Label>
-                  <div className=" d-flex justify-content-between">
+                  <div className=" d-flex justify-content-between ">
                     <Form.Control type="text" placeholder="1 chambre 1 adulte 0 enfant" />
                     <Button variant="primary"  > Vérifier la disponibilité</Button>
                   </div>
-
+                 
 
                 </Form.Group>
+
               </Form>
-
-
+          
             </Card>
 
             <Card>
