@@ -46,7 +46,7 @@ const Contact = () => {
 
               <div className="d-flex justify-content-between gap-2">
                 <Form.Group className="mb-3 w-50">
-                  <Form.Label>Nom</Form.Label>
+                  <Form.Label>Prénom</Form.Label>
                   <Form.Control
                     type='text'
                     value={registerData.firstName}
@@ -56,7 +56,7 @@ const Contact = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3 w-50">
-                  <Form.Label>Nom de famille</Form.Label>
+                  <Form.Label>Nom </Form.Label>
                   <Form.Control
                     type='text'
                     value={registerData.lastName}
