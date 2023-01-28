@@ -28,7 +28,16 @@ const HebergementDetails = () => {
   const ratingChanged = (newRating) => {
     console.log(newRating)
   }
+  let [count, setCount] = useState(0);
 
+  function incrementCount() {
+    count = count + 1;
+    setCount(count);
+  }
+  function decrementCount() {
+    count = count - 1;
+    setCount(count);
+  }
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -120,17 +129,42 @@ const HebergementDetails = () => {
                 <Form.Group className="mb-1 " controlId="exampleForm.ControlInput1">
                   <Form.Label className='text-primary fw-bold'>Chambre et occupation :</Form.Label>
                   <div className=" d-flex justify-content-between ">
-                    <Form.Control type="text" placeholder="1 chambre 1 adulte 0 enfant" />
-                    <Button variant="primary"  > Vérifier la disponibilité</Button>
-                  </div>
-                 
-
+                    
+                    
+                  
+                  <select class="form-select" aria-label="Default select example">
+              <option selected>1 chambre 1 adulte 0 enfant</option>
+              <option value="1"><span>Adulte </span>
+             
+    </option>
+              <option value="2">Enfant</option>
+              <option value="3">Chambre</option>
+              </select>
+              <Button variant="primary"  > Vérifier la disponibilité</Button>
+              </div>
                 </Form.Group>
 
               </Form>
-          
+              
             </Card>
-
+            <div class="row">
+        <div class="col-sm-3 mx-auto">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="minus" data-field="quant[0]" disabled="disabled" onClick={decrementCount} >
+                        <span class="fa fa-minus"></span>
+                    </button>
+                </span>
+                <span class="input-group-append"><div >{count}</div></span>
+                <span class="input-group-append">
+                    <button  onClick={incrementCount} type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    
             <Card>
               <div className="m-3 ">
                 <h3 className='text-decoration-underline'>Description :</h3>
