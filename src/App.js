@@ -21,17 +21,13 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import HebergementsDestination from "./pages/HebergementsDestination";
 
-
-
 function App() {
-
   const dispatch = useDispatch()
   const token = localStorage.getItem('token')
   const user = JSON.parse(localStorage.getItem('user'))
   if (token && user) {
     dispatch(login(user, token))
   }
-
   return (
     <>
       <GlobalLoading />
@@ -41,7 +37,7 @@ function App() {
           <PublicRoute exact path='/register' component={Register} />
           <PublicRoute exact path='/forgot-password' component={ForgotPassword} />
           <PublicRoute exact path='/password-reset/:id/:token' component={ResetPassoword} />
-          <CustomRoute  exact path='/' component={Home} />
+          <CustomRoute exact path='/' component={Home} />
           <PrivateRoute exact path='/hebergements' component={Hebergements} />
           <PrivateRoute exact path='/hebergemnts/:id' component={HebergementDetails} />
           <PrivateRoute exact path='/hebergements-details' component={HebergementsDestination} />
@@ -51,10 +47,9 @@ function App() {
           <CustomRoute exact path='/contact' component={Contact} />
           <CustomRoute component={NotFound} />
         </Switch>
-        <Footer/>
+        <Footer />
       </Router>
     </>
-
   );
 }
 
